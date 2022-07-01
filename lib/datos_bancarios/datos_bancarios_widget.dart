@@ -471,7 +471,7 @@ class _DatosBancariosWidgetState extends State<DatosBancariosWidget> {
                                                                   Colors.white,
                                                             ),
                                                             child: Text(
-                                                              '[file name]',
+                                                              'Carátula Bancaria',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyText1,

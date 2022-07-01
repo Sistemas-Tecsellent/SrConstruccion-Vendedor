@@ -126,6 +126,9 @@ class _RegistroWidgetState extends State<RegistroWidget> {
                             child: Container(
                               width: MediaQuery.of(context).size.width * 0.8,
                               height: 320,
+                              constraints: BoxConstraints(
+                                maxWidth: 500,
+                              ),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),

@@ -783,216 +783,222 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                                                       .max,
                                                               mainAxisAlignment:
                                                                   MainAxisAlignment
-                                                                      .start,
+                                                                      .spaceBetween,
                                                               children: [
-                                                                Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          0, 0),
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0,
-                                                                            0,
-                                                                            10,
-                                                                            0),
-                                                                    child:
-                                                                        InkWell(
-                                                                      onTap:
-                                                                          () async {
-                                                                        context
-                                                                            .pushNamed(
-                                                                          'ProductosDeMarca',
-                                                                          queryParams:
-                                                                              {
-                                                                            'brand':
-                                                                                serializeParam(marcaBrandsRecord.id, ParamType.String),
-                                                                          }.withoutNulls,
-                                                                        );
-                                                                      },
-                                                                      child:
-                                                                          ClipRRect(
-                                                                        borderRadius:
-                                                                            BorderRadius.only(
-                                                                          bottomLeft:
-                                                                              Radius.circular(8),
-                                                                          bottomRight:
-                                                                              Radius.circular(0),
-                                                                          topLeft:
-                                                                              Radius.circular(8),
-                                                                          topRight:
-                                                                              Radius.circular(0),
-                                                                        ),
-                                                                        child: Image
-                                                                            .network(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            marcaBrandsRecord.logo,
-                                                                            'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
-                                                                          ),
-                                                                          width:
-                                                                              100,
-                                                                          height:
-                                                                              100,
-                                                                          fit: BoxFit
-                                                                              .cover,
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                                Column(
+                                                                Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
                                                                           .max,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .spaceEvenly,
-                                                                  crossAxisAlignment:
-                                                                      CrossAxisAlignment
-                                                                          .start,
                                                                   children: [
                                                                     Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
                                                                               .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .start,
                                                                       children: [
-                                                                        Text(
-                                                                          'Listados',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyText1
-                                                                              .override(
-                                                                                fontFamily: 'Montserrat',
-                                                                                color: Colors.black,
-                                                                              ),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
+                                                                        Align(
+                                                                          alignment: AlignmentDirectional(
                                                                               0,
                                                                               0),
                                                                           child:
-                                                                              StreamBuilder<List<ProductsRecord>>(
-                                                                            stream:
-                                                                                queryProductsRecord(
-                                                                              queryBuilder: (productsRecord) => productsRecord.where('brand', isEqualTo: columnStoreBrandsRecord.id).where('stores', arrayContains: valueOrDefault(currentUserDocument?.storeId, '')),
-                                                                            ),
-                                                                            builder:
-                                                                                (context, snapshot) {
-                                                                              // Customize what your widget looks like when it's loading.
-                                                                              if (!snapshot.hasData) {
-                                                                                return Center(
-                                                                                  child: SizedBox(
-                                                                                    width: 50,
-                                                                                    height: 50,
-                                                                                    child: CircularProgressIndicator(
-                                                                                      color: FlutterFlowTheme.of(context).primaryColor,
-                                                                                    ),
-                                                                                  ),
+                                                                              Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0,
+                                                                                0,
+                                                                                10,
+                                                                                0),
+                                                                            child:
+                                                                                InkWell(
+                                                                              onTap: () async {
+                                                                                context.pushNamed(
+                                                                                  'ProductosDeMarca',
+                                                                                  queryParams: {
+                                                                                    'brand': serializeParam(marcaBrandsRecord.id, ParamType.String),
+                                                                                  }.withoutNulls,
                                                                                 );
-                                                                              }
-                                                                              List<ProductsRecord> textProductsRecordList = snapshot.data;
-                                                                              return Text(
-                                                                                valueOrDefault<String>(
-                                                                                  textProductsRecordList.length.toString(),
-                                                                                  '0',
+                                                                              },
+                                                                              child: ClipRRect(
+                                                                                borderRadius: BorderRadius.only(
+                                                                                  bottomLeft: Radius.circular(8),
+                                                                                  bottomRight: Radius.circular(0),
+                                                                                  topLeft: Radius.circular(8),
+                                                                                  topRight: Radius.circular(0),
                                                                                 ),
-                                                                                style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                      fontFamily: 'Montserrat',
-                                                                                      color: Colors.black,
-                                                                                      fontWeight: FontWeight.normal,
-                                                                                    ),
-                                                                              );
-                                                                            },
-                                                                          ),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
-                                                                          child:
-                                                                              StreamBuilder<List<ProductsRecord>>(
-                                                                            stream:
-                                                                                queryProductsRecord(
-                                                                              queryBuilder: (productsRecord) => productsRecord.where('brand', isEqualTo: columnStoreBrandsRecord.id).where('stores', arrayContains: valueOrDefault(currentUserDocument?.storeId, '')),
-                                                                            ),
-                                                                            builder:
-                                                                                (context, snapshot) {
-                                                                              // Customize what your widget looks like when it's loading.
-                                                                              if (!snapshot.hasData) {
-                                                                                return Center(
-                                                                                  child: SizedBox(
-                                                                                    width: 50,
-                                                                                    height: 50,
-                                                                                    child: CircularProgressIndicator(
-                                                                                      color: FlutterFlowTheme.of(context).primaryColor,
-                                                                                    ),
+                                                                                child: Image.network(
+                                                                                  valueOrDefault<String>(
+                                                                                    marcaBrandsRecord.logo,
+                                                                                    'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
                                                                                   ),
-                                                                                );
-                                                                              }
-                                                                              List<ProductsRecord> textProductsRecordList = snapshot.data;
-                                                                              return Text(
-                                                                                '/',
-                                                                                style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                      fontFamily: 'Montserrat',
-                                                                                      color: Colors.black,
-                                                                                      fontWeight: FontWeight.normal,
-                                                                                    ),
-                                                                              );
-                                                                            },
-                                                                          ),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              5,
-                                                                              0,
-                                                                              0,
-                                                                              0),
-                                                                          child:
-                                                                              StreamBuilder<List<ProductsRecord>>(
-                                                                            stream:
-                                                                                queryProductsRecord(
-                                                                              queryBuilder: (productsRecord) => productsRecord.where('brand', isEqualTo: columnStoreBrandsRecord.id).where('stores', arrayContains: valueOrDefault(currentUserDocument?.storeId, '')),
+                                                                                  width: 100,
+                                                                                  height: 100,
+                                                                                  fit: BoxFit.cover,
+                                                                                ),
+                                                                              ),
                                                                             ),
-                                                                            builder:
-                                                                                (context, snapshot) {
-                                                                              // Customize what your widget looks like when it's loading.
-                                                                              if (!snapshot.hasData) {
-                                                                                return Center(
-                                                                                  child: SizedBox(
-                                                                                    width: 50,
-                                                                                    height: 50,
-                                                                                    child: CircularProgressIndicator(
-                                                                                      color: FlutterFlowTheme.of(context).primaryColor,
-                                                                                    ),
-                                                                                  ),
-                                                                                );
-                                                                              }
-                                                                              List<ProductsRecord> textProductsRecordList = snapshot.data;
-                                                                              return Text(
-                                                                                textProductsRecordList.length.toString(),
-                                                                                style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                      fontFamily: 'Montserrat',
-                                                                                      color: Colors.black,
-                                                                                      fontWeight: FontWeight.normal,
-                                                                                    ),
-                                                                              );
-                                                                            },
                                                                           ),
                                                                         ),
-                                                                        Icon(
-                                                                          Icons
-                                                                              .keyboard_arrow_right_rounded,
-                                                                          color:
-                                                                              Colors.black,
-                                                                          size:
-                                                                              24,
+                                                                        Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.spaceEvenly,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children: [
+                                                                            Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
+                                                                                Text(
+                                                                                  'Listados',
+                                                                                  style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                        fontFamily: 'Montserrat',
+                                                                                        color: Colors.black,
+                                                                                      ),
+                                                                                ),
+                                                                                Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                                                                                  child: StreamBuilder<List<ProductsRecord>>(
+                                                                                    stream: queryProductsRecord(
+                                                                                      queryBuilder: (productsRecord) => productsRecord.where('brand', isEqualTo: columnStoreBrandsRecord.id).where('stores', arrayContains: valueOrDefault(currentUserDocument?.storeId, '')),
+                                                                                    ),
+                                                                                    builder: (context, snapshot) {
+                                                                                      // Customize what your widget looks like when it's loading.
+                                                                                      if (!snapshot.hasData) {
+                                                                                        return Center(
+                                                                                          child: SizedBox(
+                                                                                            width: 50,
+                                                                                            height: 50,
+                                                                                            child: CircularProgressIndicator(
+                                                                                              color: FlutterFlowTheme.of(context).primaryColor,
+                                                                                            ),
+                                                                                          ),
+                                                                                        );
+                                                                                      }
+                                                                                      List<ProductsRecord> textProductsRecordList = snapshot.data;
+                                                                                      return Text(
+                                                                                        valueOrDefault<String>(
+                                                                                          textProductsRecordList.length.toString(),
+                                                                                          '0',
+                                                                                        ),
+                                                                                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                              fontFamily: 'Montserrat',
+                                                                                              color: Colors.black,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                            ),
+                                                                                      );
+                                                                                    },
+                                                                                  ),
+                                                                                ),
+                                                                                Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                                                                                  child: StreamBuilder<List<ProductsRecord>>(
+                                                                                    stream: queryProductsRecord(
+                                                                                      queryBuilder: (productsRecord) => productsRecord.where('brand', isEqualTo: columnStoreBrandsRecord.id).where('stores', arrayContains: valueOrDefault(currentUserDocument?.storeId, '')),
+                                                                                    ),
+                                                                                    builder: (context, snapshot) {
+                                                                                      // Customize what your widget looks like when it's loading.
+                                                                                      if (!snapshot.hasData) {
+                                                                                        return Center(
+                                                                                          child: SizedBox(
+                                                                                            width: 50,
+                                                                                            height: 50,
+                                                                                            child: CircularProgressIndicator(
+                                                                                              color: FlutterFlowTheme.of(context).primaryColor,
+                                                                                            ),
+                                                                                          ),
+                                                                                        );
+                                                                                      }
+                                                                                      List<ProductsRecord> textProductsRecordList = snapshot.data;
+                                                                                      return Text(
+                                                                                        '/',
+                                                                                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                              fontFamily: 'Montserrat',
+                                                                                              color: Colors.black,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                            ),
+                                                                                      );
+                                                                                    },
+                                                                                  ),
+                                                                                ),
+                                                                                Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                                                                                  child: StreamBuilder<List<ProductsRecord>>(
+                                                                                    stream: queryProductsRecord(
+                                                                                      queryBuilder: (productsRecord) => productsRecord.where('brand', isEqualTo: columnStoreBrandsRecord.id).where('stores', arrayContains: valueOrDefault(currentUserDocument?.storeId, '')),
+                                                                                    ),
+                                                                                    builder: (context, snapshot) {
+                                                                                      // Customize what your widget looks like when it's loading.
+                                                                                      if (!snapshot.hasData) {
+                                                                                        return Center(
+                                                                                          child: SizedBox(
+                                                                                            width: 50,
+                                                                                            height: 50,
+                                                                                            child: CircularProgressIndicator(
+                                                                                              color: FlutterFlowTheme.of(context).primaryColor,
+                                                                                            ),
+                                                                                          ),
+                                                                                        );
+                                                                                      }
+                                                                                      List<ProductsRecord> textProductsRecordList = snapshot.data;
+                                                                                      return Text(
+                                                                                        textProductsRecordList.length.toString(),
+                                                                                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                              fontFamily: 'Montserrat',
+                                                                                              color: Colors.black,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                            ),
+                                                                                      );
+                                                                                    },
+                                                                                  ),
+                                                                                ),
+                                                                                Icon(
+                                                                                  Icons.keyboard_arrow_right_rounded,
+                                                                                  color: Colors.black,
+                                                                                  size: 24,
+                                                                                ),
+                                                                              ],
+                                                                            ),
+                                                                          ],
                                                                         ),
                                                                       ],
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                                Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Expanded(
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0,
+                                                                            0,
+                                                                            15,
+                                                                            0),
+                                                                        child:
+                                                                            InkWell(
+                                                                          onTap:
+                                                                              () async {
+                                                                            await actions.addBrand(
+                                                                              currentUserUid,
+                                                                              marcaBrandsRecord.id,
+                                                                              valueOrDefault(currentUserDocument?.storeId, ''),
+                                                                            );
+                                                                          },
+                                                                          child:
+                                                                              Icon(
+                                                                            Icons.minimize_rounded,
+                                                                            color:
+                                                                                Color(0xFF95A1AC),
+                                                                            size:
+                                                                                24,
+                                                                          ),
+                                                                        ),
+                                                                      ),
                                                                     ),
                                                                   ],
                                                                 ),

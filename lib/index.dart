@@ -11,16 +11,16 @@ export 'productos_de_marca/productos_de_marca_widget.dart'
 export 'pedidos/pedidos_widget.dart' show PedidosWidget;
 export 'variant_inventory/variant_inventory_widget.dart'
     show VariantInventoryWidget;
-export 'product_page/product_page_widget.dart' show ProductPageWidget;
 export 'nuevo_pedido_e_x_p_r_e_s_s/nuevo_pedido_e_x_p_r_e_s_s_widget.dart'
     show NuevoPedidoEXPRESSWidget;
 export 'pedido_listo_e_x_p_r_e_s_s/pedido_listo_e_x_p_r_e_s_s_widget.dart'
     show PedidoListoEXPRESSWidget;
+export 'product_page/product_page_widget.dart' show ProductPageWidget;
 export 'por_entregar_e_x_p_r_e_s_s/por_entregar_e_x_p_r_e_s_s_widget.dart'
     show PorEntregarEXPRESSWidget;
+export 'ventas/ventas_widget.dart' show VentasWidget;
 export 'anadir_repartidor/anadir_repartidor_widget.dart'
     show AnadirRepartidorWidget;
-export 'ventas/ventas_widget.dart' show VentasWidget;
 export 'ingreso_dia/ingreso_dia_widget.dart' show IngresoDiaWidget;
 export 'ingreso_pedido/ingreso_pedido_widget.dart' show IngresoPedidoWidget;
 export 'repartidores/repartidores_widget.dart' show RepartidoresWidget;
@@ -61,9 +61,9 @@ export 'pedido_checkout/pedido_checkout_widget.dart' show PedidoCheckoutWidget;
 export 'info_transferencia/info_transferencia_widget.dart'
     show InfoTransferenciaWidget;
 export 'pedido_final/pedido_final_widget.dart' show PedidoFinalWidget;
-export 'mis_compras/mis_compras_widget.dart' show MisComprasWidget;
 export 'chat/chat_widget.dart' show ChatWidget;
 export 'chats/chats_widget.dart' show ChatsWidget;
+export 'mis_compras/mis_compras_widget.dart' show MisComprasWidget;
 export 'marca_single/marca_single_widget.dart' show MarcaSingleWidget;
 export 'resumen_solicitud_cotizacion/resumen_solicitud_cotizacion_widget.dart'
     show ResumenSolicitudCotizacionWidget;
@@ -74,10 +74,10 @@ export 'cotizaciones/cotizaciones_widget.dart' show CotizacionesWidget;
 export 'mi_cuenta/mi_cuenta_widget.dart' show MiCuentaWidget;
 export 'informacion_fiscal/informacion_fiscal_widget.dart'
     show InformacionFiscalWidget;
-export 'nuevo_pedido_recoger_en_tienda_s_e_l_l_e_r/nuevo_pedido_recoger_en_tienda_s_e_l_l_e_r_widget.dart'
-    show NuevoPedidoRecogerEnTiendaSELLERWidget;
 export 'por_entregar_recoger_en_tienda_s_e_l_l_e_r/por_entregar_recoger_en_tienda_s_e_l_l_e_r_widget.dart'
     show PorEntregarRecogerEnTiendaSELLERWidget;
+export 'nuevo_pedido_recoger_en_tienda_s_e_l_l_e_r/nuevo_pedido_recoger_en_tienda_s_e_l_l_e_r_widget.dart'
+    show NuevoPedidoRecogerEnTiendaSELLERWidget;
 export 'pedido_listo_recoger_en_tienda_s_e_l_l_e_r/pedido_listo_recoger_en_tienda_s_e_l_l_e_r_widget.dart'
     show PedidoListoRecogerEnTiendaSELLERWidget;
 export 'nuevo_pedido_s_e_l_l_e_r_e_x_p_r_e_s_s/nuevo_pedido_s_e_l_l_e_r_e_x_p_r_e_s_s_widget.dart'

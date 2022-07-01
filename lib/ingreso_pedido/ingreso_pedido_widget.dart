@@ -409,7 +409,7 @@ class _IngresoPedidoWidgetState extends State<IngresoPedidoWidget> {
                     ))
                       Expanded(
                         child: Container(
-                          width: MediaQuery.of(context).size.width,
+                          width: MediaQuery.of(context).size.width * 0.9,
                           color: Colors.white,
                           child: ExpandableNotifier(
                             initialExpanded: false,

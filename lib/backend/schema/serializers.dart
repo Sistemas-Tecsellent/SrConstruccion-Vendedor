@@ -16,6 +16,7 @@ import 'store_brands_record.dart';
 import 'notifications_record.dart';
 import 'completed_orders_record.dart';
 import 'earning_history_record.dart';
+import 'pricing_requests_record.dart';
 
 import 'index.dart';
 
@@ -43,6 +44,7 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   NotificationsRecord,
   CompletedOrdersRecord,
   EarningHistoryRecord,
+  PricingRequestsRecord,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())

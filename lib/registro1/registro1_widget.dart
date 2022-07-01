@@ -187,7 +187,7 @@ class _Registro1WidgetState extends State<Registro1Widget> {
                         padding: EdgeInsetsDirectional.fromSTEB(20, 40, 20, 20),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
                               width: 40,
@@ -225,71 +225,79 @@ class _Registro1WidgetState extends State<Registro1Widget> {
                                     ),
                               ),
                             ),
-                            InkWell(
-                              onTap: () async {
-                                context.pushNamed(
-                                  'registro2',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType:
-                                          PageTransitionType.rightToLeft,
-                                    ),
-                                  },
-                                );
-                              },
-                              child: Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  color: Color(0x94FAF1E2),
-                                  shape: BoxShape.circle,
-                                ),
-                                alignment: AlignmentDirectional(0, 0),
-                                child: Text(
-                                  '2',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Montserrat',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryColor,
-                                        fontSize: 20,
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                              child: InkWell(
+                                onTap: () async {
+                                  context.pushNamed(
+                                    'registro2',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.rightToLeft,
                                       ),
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: Color(0x94FAF1E2),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  alignment: AlignmentDirectional(0, 0),
+                                  child: Text(
+                                    '2',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Montserrat',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryColor,
+                                          fontSize: 20,
+                                        ),
+                                  ),
                                 ),
                               ),
                             ),
-                            InkWell(
-                              onTap: () async {
-                                context.pushNamed(
-                                  'registro2',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType:
-                                          PageTransitionType.rightToLeft,
-                                    ),
-                                  },
-                                );
-                              },
-                              child: Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  color: Color(0x94FAF1E2),
-                                  shape: BoxShape.circle,
-                                ),
-                                alignment: AlignmentDirectional(0, 0),
-                                child: Text(
-                                  '3',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Montserrat',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryColor,
-                                        fontSize: 20,
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+                              child: InkWell(
+                                onTap: () async {
+                                  context.pushNamed(
+                                    'registro2',
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType:
+                                            PageTransitionType.rightToLeft,
                                       ),
+                                    },
+                                  );
+                                },
+                                child: Container(
+                                  width: 40,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: Color(0x94FAF1E2),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  alignment: AlignmentDirectional(0, 0),
+                                  child: Text(
+                                    '3',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyText1
+                                        .override(
+                                          fontFamily: 'Montserrat',
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryColor,
+                                          fontSize: 20,
+                                        ),
+                                  ),
                                 ),
                               ),
                             ),
@@ -890,19 +898,27 @@ class _Registro1WidgetState extends State<Registro1Widget> {
                                                                       size: 38,
                                                                     ),
                                                                   ),
-                                                                  Text(
-                                                                    'Lunes',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyText1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Montserrat',
-                                                                          fontSize:
-                                                                              11,
-                                                                          fontWeight:
-                                                                              FontWeight.w500,
-                                                                        ),
+                                                                  Container(
+                                                                    width: 50,
+                                                                    decoration:
+                                                                        BoxDecoration(),
+                                                                    child: Text(
+                                                                      'Lunes',
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .end,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyText1
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Montserrat',
+                                                                            fontSize:
+                                                                                11,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                          ),
+                                                                    ),
                                                                   ),
                                                                 ],
                                                               ),
@@ -1179,7 +1195,7 @@ class _Registro1WidgetState extends State<Registro1Widget> {
                                                                       final workDaysUpdateData =
                                                                           createWorkDaysRecordData(
                                                                         enabled:
-                                                                            rowWorkDaysRecord.enabled,
+                                                                            !rowWorkDaysRecord.enabled,
                                                                       );
                                                                       await rowWorkDaysRecord
                                                                           .reference
@@ -1206,19 +1222,27 @@ class _Registro1WidgetState extends State<Registro1Widget> {
                                                                       size: 38,
                                                                     ),
                                                                   ),
-                                                                  Text(
-                                                                    'Martes',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyText1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Montserrat',
-                                                                          fontSize:
-                                                                              11,
-                                                                          fontWeight:
-                                                                              FontWeight.w500,
-                                                                        ),
+                                                                  Container(
+                                                                    width: 50,
+                                                                    decoration:
+                                                                        BoxDecoration(),
+                                                                    child: Text(
+                                                                      'Martes',
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .end,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyText1
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Montserrat',
+                                                                            fontSize:
+                                                                                11,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                          ),
+                                                                    ),
                                                                   ),
                                                                 ],
                                                               ),
@@ -1540,19 +1564,27 @@ class _Registro1WidgetState extends State<Registro1Widget> {
                                                                       size: 38,
                                                                     ),
                                                                   ),
-                                                                  Text(
-                                                                    'Miércoles',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyText1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Montserrat',
-                                                                          fontSize:
-                                                                              11,
-                                                                          fontWeight:
-                                                                              FontWeight.w500,
-                                                                        ),
+                                                                  Container(
+                                                                    width: 53,
+                                                                    decoration:
+                                                                        BoxDecoration(),
+                                                                    child: Text(
+                                                                      'Miércoles',
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .end,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyText1
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Montserrat',
+                                                                            fontSize:
+                                                                                11,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                          ),
+                                                                    ),
                                                                   ),
                                                                 ],
                                                               ),
@@ -1874,19 +1906,27 @@ class _Registro1WidgetState extends State<Registro1Widget> {
                                                                       size: 38,
                                                                     ),
                                                                   ),
-                                                                  Text(
-                                                                    'Jueves',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyText1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Montserrat',
-                                                                          fontSize:
-                                                                              11,
-                                                                          fontWeight:
-                                                                              FontWeight.w500,
-                                                                        ),
+                                                                  Container(
+                                                                    width: 50,
+                                                                    decoration:
+                                                                        BoxDecoration(),
+                                                                    child: Text(
+                                                                      'Jueves',
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .end,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyText1
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Montserrat',
+                                                                            fontSize:
+                                                                                11,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                          ),
+                                                                    ),
                                                                   ),
                                                                 ],
                                                               ),
@@ -2208,19 +2248,27 @@ class _Registro1WidgetState extends State<Registro1Widget> {
                                                                       size: 38,
                                                                     ),
                                                                   ),
-                                                                  Text(
-                                                                    'Viernes',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyText1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Montserrat',
-                                                                          fontSize:
-                                                                              11,
-                                                                          fontWeight:
-                                                                              FontWeight.w500,
-                                                                        ),
+                                                                  Container(
+                                                                    width: 50,
+                                                                    decoration:
+                                                                        BoxDecoration(),
+                                                                    child: Text(
+                                                                      'Viernes',
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .end,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyText1
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Montserrat',
+                                                                            fontSize:
+                                                                                11,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                          ),
+                                                                    ),
                                                                   ),
                                                                 ],
                                                               ),
@@ -2542,19 +2590,27 @@ class _Registro1WidgetState extends State<Registro1Widget> {
                                                                       size: 38,
                                                                     ),
                                                                   ),
-                                                                  Text(
-                                                                    'Sábado',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyText1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Montserrat',
-                                                                          fontSize:
-                                                                              11,
-                                                                          fontWeight:
-                                                                              FontWeight.w500,
-                                                                        ),
+                                                                  Container(
+                                                                    width: 50,
+                                                                    decoration:
+                                                                        BoxDecoration(),
+                                                                    child: Text(
+                                                                      'Sábado',
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .end,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyText1
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Montserrat',
+                                                                            fontSize:
+                                                                                11,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                          ),
+                                                                    ),
                                                                   ),
                                                                 ],
                                                               ),
@@ -2876,21 +2932,27 @@ class _Registro1WidgetState extends State<Registro1Widget> {
                                                                       size: 38,
                                                                     ),
                                                                   ),
-                                                                  Text(
-                                                                    'Domingo',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyText1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Montserrat',
-                                                                          color:
-                                                                              Color(0xFF8B8B8B),
-                                                                          fontSize:
-                                                                              11,
-                                                                          fontWeight:
-                                                                              FontWeight.w500,
-                                                                        ),
+                                                                  Container(
+                                                                    width: 53,
+                                                                    decoration:
+                                                                        BoxDecoration(),
+                                                                    child: Text(
+                                                                      'Domingo',
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .end,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyText1
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Montserrat',
+                                                                            fontSize:
+                                                                                11,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                          ),
+                                                                    ),
                                                                   ),
                                                                 ],
                                                               ),
@@ -2920,7 +2982,7 @@ class _Registro1WidgetState extends State<Registro1Widget> {
                                                                             fontFamily:
                                                                                 'Montserrat',
                                                                             color:
-                                                                                Color(0xFF8B8B8B),
+                                                                                FlutterFlowTheme.of(context).primaryText,
                                                                             fontSize:
                                                                                 11,
                                                                             fontWeight:
@@ -2982,7 +3044,7 @@ class _Registro1WidgetState extends State<Registro1Widget> {
                                                                               Icon(
                                                                             Icons.access_time,
                                                                             color:
-                                                                                Color(0xFF8B8B8B),
+                                                                                FlutterFlowTheme.of(context).primaryText,
                                                                             size:
                                                                                 15,
                                                                           ),
@@ -3032,7 +3094,7 @@ class _Registro1WidgetState extends State<Registro1Widget> {
                                                                             fontFamily:
                                                                                 'Montserrat',
                                                                             color:
-                                                                                Color(0xFF8B8B8B),
+                                                                                Colors.black,
                                                                             fontSize:
                                                                                 11,
                                                                             fontWeight:
@@ -3088,7 +3150,7 @@ class _Registro1WidgetState extends State<Registro1Widget> {
                                                                           Icons
                                                                               .access_time,
                                                                           color:
-                                                                              Color(0xFF8B8B8B),
+                                                                              FlutterFlowTheme.of(context).primaryText,
                                                                           size:
                                                                               15,
                                                                         ),

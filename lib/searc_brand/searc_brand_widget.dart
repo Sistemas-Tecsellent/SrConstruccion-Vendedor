@@ -67,6 +67,9 @@ class _SearcBrandWidgetState extends State<SearcBrandWidget> {
                       Container(
                         width: MediaQuery.of(context).size.width * 0.9,
                         height: 50,
+                        constraints: BoxConstraints(
+                          maxWidth: 400,
+                        ),
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
@@ -181,6 +184,9 @@ class _SearcBrandWidgetState extends State<SearcBrandWidget> {
                                       width: MediaQuery.of(context).size.width *
                                           0.9,
                                       height: 90,
+                                      constraints: BoxConstraints(
+                                        maxWidth: 400,
+                                      ),
                                       decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius: BorderRadius.circular(10),

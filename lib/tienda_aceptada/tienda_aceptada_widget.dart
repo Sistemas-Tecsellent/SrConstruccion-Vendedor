@@ -26,7 +26,10 @@ class _TiendaAceptadaWidgetState extends State<TiendaAceptadaWidget> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              TiendaAprobadaWidget(),
+              Align(
+                alignment: AlignmentDirectional(0, 1),
+                child: TiendaAprobadaWidget(),
+              ),
             ],
           ),
         ),

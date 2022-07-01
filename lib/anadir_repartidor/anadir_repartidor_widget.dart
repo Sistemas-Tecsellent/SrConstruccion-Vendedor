@@ -96,9 +96,13 @@ class _AnadirRepartidorWidgetState extends State<AnadirRepartidorWidget> {
                       children: [
                         Container(
                           width: MediaQuery.of(context).size.width * 0.8,
+                          constraints: BoxConstraints(
+                            maxWidth: 500,
+                          ),
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
+                            borderRadius: BorderRadius.circular(10),
                           ),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,

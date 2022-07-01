@@ -15,3 +15,5 @@ export 'update_pickup_in_store_order_decision.dart'
     show updatePickupInStoreOrderDecision;
 export 'deliver_pickup_order.dart' show deliverPickupOrder;
 export 'delete_notification.dart' show deleteNotification;
+export 'validate_code.dart' show validateCode;
+export 'mark_pickup_order_as_ready.dart' show markPickupOrderAsReady;

@@ -20,6 +20,7 @@ import 'schema/store_brands_record.dart';
 import 'schema/notifications_record.dart';
 import 'schema/completed_orders_record.dart';
 import 'schema/earning_history_record.dart';
+import 'schema/pricing_requests_record.dart';
 import 'schema/serializers.dart';
 
 export 'dart:async' show StreamSubscription;
@@ -43,6 +44,7 @@ export 'schema/store_brands_record.dart';
 export 'schema/notifications_record.dart';
 export 'schema/completed_orders_record.dart';
 export 'schema/earning_history_record.dart';
+export 'schema/pricing_requests_record.dart';
 
 /// Functions to query SellersRecords (as a Stream and as a Future).
 Stream<List<SellersRecord>> querySellersRecord({
@@ -729,6 +731,48 @@ Future<FFFirestorePage<EarningHistoryRecord>> queryEarningHistoryRecordPage({
     queryCollectionPage(
       EarningHistoryRecord.collection(parent),
       EarningHistoryRecord.serializer,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    );
+
+/// Functions to query PricingRequestsRecords (as a Stream and as a Future).
+Stream<List<PricingRequestsRecord>> queryPricingRequestsRecord({
+  Query Function(Query) queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      PricingRequestsRecord.collection,
+      PricingRequestsRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<PricingRequestsRecord>> queryPricingRequestsRecordOnce({
+  Query Function(Query) queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      PricingRequestsRecord.collection,
+      PricingRequestsRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<PricingRequestsRecord>> queryPricingRequestsRecordPage({
+  Query Function(Query) queryBuilder,
+  DocumentSnapshot nextPageMarker,
+  int pageSize,
+  bool isStream,
+}) =>
+    queryCollectionPage(
+      PricingRequestsRecord.collection,
+      PricingRequestsRecord.serializer,
       queryBuilder: queryBuilder,
       nextPageMarker: nextPageMarker,
       pageSize: pageSize,

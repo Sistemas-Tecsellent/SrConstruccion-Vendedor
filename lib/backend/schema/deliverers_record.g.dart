@@ -63,6 +63,13 @@ class _$DeliverersRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.statusDetail;
+    if (value != null) {
+      result
+        ..add('statusDetail')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.reference;
     if (value != null) {
       result
@@ -110,6 +117,10 @@ class _$DeliverersRecordSerializer
           result.associatedWith = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
+        case 'statusDetail':
+          result.statusDetail = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'Document__Reference__Field':
           result.reference = serializers.deserialize(value,
                   specifiedType: const FullType(
@@ -137,6 +148,8 @@ class _$DeliverersRecord extends DeliverersRecord {
   @override
   final String associatedWith;
   @override
+  final String statusDetail;
+  @override
   final DocumentReference<Object> reference;
 
   factory _$DeliverersRecord(
@@ -150,6 +163,7 @@ class _$DeliverersRecord extends DeliverersRecord {
       this.displayName,
       this.status,
       this.associatedWith,
+      this.statusDetail,
       this.reference})
       : super._();
 
@@ -171,6 +185,7 @@ class _$DeliverersRecord extends DeliverersRecord {
         displayName == other.displayName &&
         status == other.status &&
         associatedWith == other.associatedWith &&
+        statusDetail == other.statusDetail &&
         reference == other.reference;
   }
 
@@ -180,11 +195,13 @@ class _$DeliverersRecord extends DeliverersRecord {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, uid.hashCode), transport.hashCode),
-                        photoUrl.hashCode),
-                    displayName.hashCode),
-                status.hashCode),
-            associatedWith.hashCode),
+                    $jc(
+                        $jc($jc($jc(0, uid.hashCode), transport.hashCode),
+                            photoUrl.hashCode),
+                        displayName.hashCode),
+                    status.hashCode),
+                associatedWith.hashCode),
+            statusDetail.hashCode),
         reference.hashCode));
   }
 
@@ -197,6 +214,7 @@ class _$DeliverersRecord extends DeliverersRecord {
           ..add('displayName', displayName)
           ..add('status', status)
           ..add('associatedWith', associatedWith)
+          ..add('statusDetail', statusDetail)
           ..add('reference', reference))
         .toString();
   }
@@ -231,6 +249,10 @@ class DeliverersRecordBuilder
   set associatedWith(String associatedWith) =>
       _$this._associatedWith = associatedWith;
 
+  String _statusDetail;
+  String get statusDetail => _$this._statusDetail;
+  set statusDetail(String statusDetail) => _$this._statusDetail = statusDetail;
+
   DocumentReference<Object> _reference;
   DocumentReference<Object> get reference => _$this._reference;
   set reference(DocumentReference<Object> reference) =>
@@ -249,6 +271,7 @@ class DeliverersRecordBuilder
       _displayName = $v.displayName;
       _status = $v.status;
       _associatedWith = $v.associatedWith;
+      _statusDetail = $v.statusDetail;
       _reference = $v.reference;
       _$v = null;
     }
@@ -276,6 +299,7 @@ class DeliverersRecordBuilder
             displayName: displayName,
             status: status,
             associatedWith: associatedWith,
+            statusDetail: statusDetail,
             reference: reference);
     replace(_$result);
     return _$result;

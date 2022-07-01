@@ -32,6 +32,9 @@ abstract class DeliverersRecord
   String get associatedWith;
 
   @nullable
+  String get statusDetail;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -41,7 +44,8 @@ abstract class DeliverersRecord
     ..photoUrl = ''
     ..displayName = ''
     ..status = ''
-    ..associatedWith = '';
+    ..associatedWith = ''
+    ..statusDetail = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('deliverers');
@@ -71,6 +75,7 @@ Map<String, dynamic> createDeliverersRecordData({
   String displayName,
   String status,
   String associatedWith,
+  String statusDetail,
 }) =>
     serializers.toFirestore(
         DeliverersRecord.serializer,
@@ -80,4 +85,5 @@ Map<String, dynamic> createDeliverersRecordData({
           ..photoUrl = photoUrl
           ..displayName = displayName
           ..status = status
-          ..associatedWith = associatedWith));
+          ..associatedWith = associatedWith
+          ..statusDetail = statusDetail));

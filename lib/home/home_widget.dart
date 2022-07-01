@@ -748,6 +748,8 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                       primary: false,
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           StreamBuilder<
                                               List<OrdersForStoresRecord>>(
@@ -827,6 +829,10 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                             .size
                                                             .width,
                                                         height: 60,
+                                                        constraints:
+                                                            BoxConstraints(
+                                                          maxWidth: 500,
+                                                        ),
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
@@ -933,30 +939,26 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                               );
                                             },
                                           ),
-                                          if (responsiveVisibility(
-                                            context: context,
-                                            phone: false,
-                                            tablet: false,
-                                            tabletLandscape: false,
-                                            desktop: false,
-                                          ))
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 10, 0, 0),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 10, 0, 0),
+                                            child: Container(
+                                              width: MediaQuery.of(context)
+                                                  .size
+                                                  .width,
+                                              decoration: BoxDecoration(),
                                               child: StreamBuilder<
-                                                  List<OrdersForStoresRecord>>(
+                                                  List<PricingRequestsRecord>>(
                                                 stream:
-                                                    queryOrdersForStoresRecord(
+                                                    queryPricingRequestsRecord(
                                                   queryBuilder:
-                                                      (ordersForStoresRecord) =>
-                                                          ordersForStoresRecord
-                                                              .where('seller',
+                                                      (pricingRequestsRecord) =>
+                                                          pricingRequestsRecord
+                                                              .where(
+                                                                  'assignedTo',
                                                                   isEqualTo:
-                                                                      currentUserUid)
-                                                              .where('status',
-                                                                  isEqualTo:
-                                                                      'pendingAcceptance'),
-                                                  singleRecord: true,
+                                                                      currentUserUid),
                                                 ),
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
@@ -974,155 +976,160 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                                                       ),
                                                     );
                                                   }
-                                                  List<OrdersForStoresRecord>
-                                                      columnOrdersForStoresRecordList =
+                                                  List<PricingRequestsRecord>
+                                                      rowPricingRequestsRecordList =
                                                       snapshot.data;
-                                                  // Return an empty Container when the document does not exist.
-                                                  if (snapshot.data.isEmpty) {
-                                                    return Container();
-                                                  }
-                                                  final columnOrdersForStoresRecord =
-                                                      columnOrdersForStoresRecordList
-                                                              .isNotEmpty
-                                                          ? columnOrdersForStoresRecordList
-                                                              .first
-                                                          : null;
-                                                  return Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(20, 0,
-                                                                    20, 0),
-                                                        child: InkWell(
-                                                          onTap: () async {
-                                                            context.pushNamed(
-                                                              'IngresaCostoDeEnvio',
-                                                              extra: <String,
-                                                                  dynamic>{
-                                                                kTransitionInfoKey:
-                                                                    TransitionInfo(
-                                                                  hasTransition:
-                                                                      true,
-                                                                  transitionType:
-                                                                      PageTransitionType
-                                                                          .fade,
-                                                                  duration: Duration(
-                                                                      milliseconds:
-                                                                          0),
-                                                                ),
-                                                              },
-                                                            );
-                                                          },
-                                                          child: Container(
-                                                            width:
-                                                                MediaQuery.of(
-                                                                        context)
-                                                                    .size
-                                                                    .width,
-                                                            height: 60,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: Color(
-                                                                  0xFF1EEBBD),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          5),
-                                                            ),
-                                                            alignment:
-                                                                AlignmentDirectional(
-                                                                    0, 0),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10,
-                                                                          0,
-                                                                          10,
-                                                                          0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceBetween,
-                                                                children: [
-                                                                  Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    children: [
-                                                                      Column(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceEvenly,
-                                                                        children: [
-                                                                          Container(
-                                                                            width:
-                                                                                30,
-                                                                            height:
-                                                                                30,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              shape: BoxShape.circle,
-                                                                            ),
-                                                                            alignment:
-                                                                                AlignmentDirectional(0, 0),
-                                                                            child:
-                                                                                Text(
-                                                                              '1',
-                                                                              style: FlutterFlowTheme.of(context).bodyText1,
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                  return SingleChildScrollView(
+                                                    scrollDirection:
+                                                        Axis.horizontal,
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: List.generate(
+                                                          rowPricingRequestsRecordList
+                                                              .length,
+                                                          (rowIndex) {
+                                                        final rowPricingRequestsRecord =
+                                                            rowPricingRequestsRecordList[
+                                                                rowIndex];
+                                                        return Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(20,
+                                                                      0, 10, 0),
+                                                          child: InkWell(
+                                                            onTap: () async {
+                                                              context.pushNamed(
+                                                                'IngresaCostoDeEnvio',
+                                                                queryParams: {
+                                                                  'orderId': serializeParam(
+                                                                      rowPricingRequestsRecord
+                                                                          .id,
+                                                                      ParamType
+                                                                          .String),
+                                                                }.withoutNulls,
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  kTransitionInfoKey:
+                                                                      TransitionInfo(
+                                                                    hasTransition:
+                                                                        true,
+                                                                    transitionType:
+                                                                        PageTransitionType
+                                                                            .fade,
+                                                                    duration: Duration(
+                                                                        milliseconds:
+                                                                            0),
+                                                                  ),
+                                                                },
+                                                              );
+                                                            },
+                                                            child: Container(
+                                                              width: MediaQuery.of(
+                                                                          context)
+                                                                      .size
+                                                                      .width *
+                                                                  0.9,
+                                                              height: 60,
+                                                              constraints:
+                                                                  BoxConstraints(
+                                                                maxWidth: 500,
+                                                              ),
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: Color(
+                                                                    0xFF1EEBBD),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            5),
+                                                              ),
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      0, 0),
+                                                              child: Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
                                                                             10,
                                                                             0,
-                                                                            0,
+                                                                            10,
                                                                             0),
-                                                                        child:
-                                                                            Text(
-                                                                          '¡Añade costo de Envío!',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyText1
-                                                                              .override(
-                                                                                fontFamily: 'Montserrat',
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceBetween,
+                                                                  children: [
+                                                                    Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      children: [
+                                                                        Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.spaceEvenly,
+                                                                          children: [
+                                                                            Container(
+                                                                              width: 30,
+                                                                              height: 30,
+                                                                              decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                shape: BoxShape.circle,
                                                                               ),
+                                                                              alignment: AlignmentDirectional(0, 0),
+                                                                              child: Text(
+                                                                                '1',
+                                                                                style: FlutterFlowTheme.of(context).bodyText1,
+                                                                              ),
+                                                                            ),
+                                                                          ],
                                                                         ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                  Icon(
-                                                                    Icons
-                                                                        .keyboard_arrow_right,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondaryBackground,
-                                                                    size: 24,
-                                                                  ),
-                                                                ],
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              10,
+                                                                              0,
+                                                                              0,
+                                                                              0),
+                                                                          child:
+                                                                              Text(
+                                                                            '¡Añade costo de Envío!',
+                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                  fontFamily: 'Montserrat',
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                ),
+                                                                          ),
+                                                                        ),
+                                                                      ],
+                                                                    ),
+                                                                    Icon(
+                                                                      Icons
+                                                                          .keyboard_arrow_right,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryBackground,
+                                                                      size: 24,
+                                                                    ),
+                                                                  ],
+                                                                ),
                                                               ),
                                                             ),
-                                                          ),
-                                                        ).animated([
-                                                          animationsMap[
-                                                              'containerOnPageLoadAnimation2']
-                                                        ]),
-                                                      ),
-                                                    ],
+                                                          ).animated([
+                                                            animationsMap[
+                                                                'containerOnPageLoadAnimation2']
+                                                          ]),
+                                                        );
+                                                      }),
+                                                    ),
                                                   );
                                                 },
                                               ),
                                             ),
+                                          ),
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(

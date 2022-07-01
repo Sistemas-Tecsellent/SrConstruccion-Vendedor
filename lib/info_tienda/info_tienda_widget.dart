@@ -674,7 +674,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 20),
+                        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 20),
                         child: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
@@ -777,20 +777,44 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                             fontWeight: FontWeight.normal,
                                           ),
                                     ),
-                                    FlutterFlowIconButton(
-                                      borderColor: Colors.transparent,
-                                      borderRadius: 30,
-                                      borderWidth: 1,
-                                      buttonSize: 40,
-                                      icon: Icon(
-                                        Icons.mode_edit,
-                                        color: Color(0xFF9A9A9A),
-                                        size: 20,
-                                      ),
-                                      onPressed: () async {
-                                        context
-                                            .pushNamed('EnterLocationWithMap');
-                                      },
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 0, 10, 0),
+                                          child: Text(
+                                            'Ingresa tu ubicación en el mapa',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Montserrat',
+                                                  color: Color(0xFFA0A0A0),
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.normal,
+                                                ),
+                                          ),
+                                        ),
+                                        FlutterFlowIconButton(
+                                          borderColor: Colors.transparent,
+                                          borderRadius: 30,
+                                          borderWidth: 1,
+                                          buttonSize: 40,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .alternate,
+                                          icon: Icon(
+                                            Icons.location_on,
+                                            color: Colors.white,
+                                            size: 20,
+                                          ),
+                                          onPressed: () async {
+                                            context.pushNamed(
+                                                'EnterLocationWithMap');
+                                          },
+                                        ),
+                                      ],
                                     ),
                                   ],
                                 ),
@@ -1102,7 +1126,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                               () async {
                                                                             final workDaysUpdateData =
                                                                                 createWorkDaysRecordData(
-                                                                              enabled: rowWorkDaysRecord.enabled,
+                                                                              enabled: !rowWorkDaysRecord.enabled,
                                                                             );
                                                                             await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                           },
@@ -1125,15 +1149,22 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 38,
                                                                           ),
                                                                         ),
-                                                                        Text(
-                                                                          'Lun.',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyText1
-                                                                              .override(
-                                                                                fontFamily: 'Montserrat',
-                                                                                fontSize: 11,
-                                                                                fontWeight: FontWeight.w500,
-                                                                              ),
+                                                                        Container(
+                                                                          width:
+                                                                              50,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Text(
+                                                                            'Lunes',
+                                                                            textAlign:
+                                                                                TextAlign.end,
+                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                  fontFamily: 'Montserrat',
+                                                                                  fontSize: 11,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                ),
+                                                                          ),
                                                                         ),
                                                                       ],
                                                                     ),
@@ -1345,7 +1376,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                               () async {
                                                                             final workDaysUpdateData =
                                                                                 createWorkDaysRecordData(
-                                                                              enabled: rowWorkDaysRecord.enabled,
+                                                                              enabled: !rowWorkDaysRecord.enabled,
                                                                             );
                                                                             await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                           },
@@ -1368,15 +1399,22 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 38,
                                                                           ),
                                                                         ),
-                                                                        Text(
-                                                                          'Mar.',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyText1
-                                                                              .override(
-                                                                                fontFamily: 'Montserrat',
-                                                                                fontSize: 11,
-                                                                                fontWeight: FontWeight.w500,
-                                                                              ),
+                                                                        Container(
+                                                                          width:
+                                                                              50,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Text(
+                                                                            'Martes',
+                                                                            textAlign:
+                                                                                TextAlign.end,
+                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                  fontFamily: 'Montserrat',
+                                                                                  fontSize: 11,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                ),
+                                                                          ),
                                                                         ),
                                                                       ],
                                                                     ),
@@ -1588,7 +1626,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                               () async {
                                                                             final workDaysUpdateData =
                                                                                 createWorkDaysRecordData(
-                                                                              enabled: rowWorkDaysRecord.enabled,
+                                                                              enabled: !rowWorkDaysRecord.enabled,
                                                                             );
                                                                             await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                           },
@@ -1611,15 +1649,22 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 38,
                                                                           ),
                                                                         ),
-                                                                        Text(
-                                                                          'Mié.',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyText1
-                                                                              .override(
-                                                                                fontFamily: 'Montserrat',
-                                                                                fontSize: 11,
-                                                                                fontWeight: FontWeight.w500,
-                                                                              ),
+                                                                        Container(
+                                                                          width:
+                                                                              53,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Text(
+                                                                            'Miércoles',
+                                                                            textAlign:
+                                                                                TextAlign.end,
+                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                  fontFamily: 'Montserrat',
+                                                                                  fontSize: 11,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                ),
+                                                                          ),
                                                                         ),
                                                                       ],
                                                                     ),
@@ -1831,7 +1876,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                               () async {
                                                                             final workDaysUpdateData =
                                                                                 createWorkDaysRecordData(
-                                                                              enabled: rowWorkDaysRecord.enabled,
+                                                                              enabled: !rowWorkDaysRecord.enabled,
                                                                             );
                                                                             await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                           },
@@ -1854,15 +1899,22 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 38,
                                                                           ),
                                                                         ),
-                                                                        Text(
-                                                                          'Jue.',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyText1
-                                                                              .override(
-                                                                                fontFamily: 'Montserrat',
-                                                                                fontSize: 11,
-                                                                                fontWeight: FontWeight.w500,
-                                                                              ),
+                                                                        Container(
+                                                                          width:
+                                                                              50,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Text(
+                                                                            'Jueves',
+                                                                            textAlign:
+                                                                                TextAlign.end,
+                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                  fontFamily: 'Montserrat',
+                                                                                  fontSize: 11,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                ),
+                                                                          ),
                                                                         ),
                                                                       ],
                                                                     ),
@@ -2074,7 +2126,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                               () async {
                                                                             final workDaysUpdateData =
                                                                                 createWorkDaysRecordData(
-                                                                              enabled: rowWorkDaysRecord.enabled,
+                                                                              enabled: !rowWorkDaysRecord.enabled,
                                                                             );
                                                                             await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                           },
@@ -2097,15 +2149,22 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 38,
                                                                           ),
                                                                         ),
-                                                                        Text(
-                                                                          'Vie.',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyText1
-                                                                              .override(
-                                                                                fontFamily: 'Montserrat',
-                                                                                fontSize: 11,
-                                                                                fontWeight: FontWeight.w500,
-                                                                              ),
+                                                                        Container(
+                                                                          width:
+                                                                              50,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Text(
+                                                                            'Viernes',
+                                                                            textAlign:
+                                                                                TextAlign.end,
+                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                  fontFamily: 'Montserrat',
+                                                                                  fontSize: 11,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                ),
+                                                                          ),
                                                                         ),
                                                                       ],
                                                                     ),
@@ -2317,7 +2376,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                               () async {
                                                                             final workDaysUpdateData =
                                                                                 createWorkDaysRecordData(
-                                                                              enabled: rowWorkDaysRecord.enabled,
+                                                                              enabled: !rowWorkDaysRecord.enabled,
                                                                             );
                                                                             await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                           },
@@ -2340,15 +2399,22 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 38,
                                                                           ),
                                                                         ),
-                                                                        Text(
-                                                                          'Sáb.',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyText1
-                                                                              .override(
-                                                                                fontFamily: 'Montserrat',
-                                                                                fontSize: 11,
-                                                                                fontWeight: FontWeight.w500,
-                                                                              ),
+                                                                        Container(
+                                                                          width:
+                                                                              50,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Text(
+                                                                            'Sábado',
+                                                                            textAlign:
+                                                                                TextAlign.end,
+                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                  fontFamily: 'Montserrat',
+                                                                                  fontSize: 11,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                ),
+                                                                          ),
                                                                         ),
                                                                       ],
                                                                     ),
@@ -2560,7 +2626,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                               () async {
                                                                             final workDaysUpdateData =
                                                                                 createWorkDaysRecordData(
-                                                                              enabled: rowWorkDaysRecord.enabled,
+                                                                              enabled: !rowWorkDaysRecord.enabled,
                                                                             );
                                                                             await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                           },
@@ -2583,16 +2649,22 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 38,
                                                                           ),
                                                                         ),
-                                                                        Text(
-                                                                          'Dom.',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyText1
-                                                                              .override(
-                                                                                fontFamily: 'Montserrat',
-                                                                                color: Color(0xFF8B8B8B),
-                                                                                fontSize: 11,
-                                                                                fontWeight: FontWeight.w500,
-                                                                              ),
+                                                                        Container(
+                                                                          width:
+                                                                              53,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Text(
+                                                                            'Domingo',
+                                                                            textAlign:
+                                                                                TextAlign.end,
+                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                  fontFamily: 'Montserrat',
+                                                                                  fontSize: 11,
+                                                                                  fontWeight: FontWeight.w500,
+                                                                                ),
+                                                                          ),
                                                                         ),
                                                                       ],
                                                                     ),
@@ -2616,7 +2688,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 datePicked13),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
-                                                                                  color: Color(0xFF8B8B8B),
+                                                                                  color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 11,
                                                                                   fontWeight: FontWeight.normal,
                                                                                 ),
@@ -2651,7 +2723,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(10, 2, 10, 2),
                                                                                 child: Icon(
                                                                                   Icons.access_time,
-                                                                                  color: Color(0xFF8B8B8B),
+                                                                                  color: Colors.black,
                                                                                   size: 15,
                                                                                 ),
                                                                               ),
@@ -2669,7 +2741,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                             '-',
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
-                                                                                  color: Color(0xFF8B8B8B),
+                                                                                  color: Colors.black,
                                                                                   fontSize: 11,
                                                                                   fontWeight: FontWeight.normal,
                                                                                 ),
@@ -2687,7 +2759,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 datePicked14),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
-                                                                                  color: Color(0xFF8B8B8B),
+                                                                                  color: FlutterFlowTheme.of(context).primaryText,
                                                                                   fontSize: 11,
                                                                                   fontWeight: FontWeight.normal,
                                                                                 ),
@@ -2717,7 +2789,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                               padding: EdgeInsetsDirectional.fromSTEB(10, 2, 10, 2),
                                                                               child: Icon(
                                                                                 Icons.access_time,
-                                                                                color: Color(0xFF8B8B8B),
+                                                                                color: Colors.black,
                                                                                 size: 15,
                                                                               ),
                                                                             ),

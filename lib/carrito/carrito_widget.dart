@@ -123,6 +123,9 @@ class _CarritoWidgetState extends State<CarritoWidget> {
                         child: Container(
                           width: MediaQuery.of(context).size.width * 0.95,
                           height: 140,
+                          constraints: BoxConstraints(
+                            maxWidth: 400,
+                          ),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             boxShadow: [

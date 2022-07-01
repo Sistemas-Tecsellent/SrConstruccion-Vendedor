@@ -246,3 +246,64 @@ class IsSellerApprovedCall {
         r'''$.isApproved''',
       );
 }
+
+class GetPricingRequestInfoCall {
+  static Future<ApiCallResponse> call({
+    String requestId = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'getPricingRequestInfo',
+      apiUrl:
+          'https://us-central1-srconstruccion-d4663.cloudfunctions.net/getPricingRequestInfo',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'requestId': requestId,
+      },
+      returnBody: true,
+    );
+  }
+}
+
+class UpdatePricingRequestCall {
+  static Future<ApiCallResponse> call({
+    String requestId = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'updatePricingRequest',
+      apiUrl:
+          'https://us-central1-srconstruccion-d4663.cloudfunctions.net/updatePricingRequest',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'requestId': requestId,
+      },
+      returnBody: true,
+    );
+  }
+}
+
+class HasAccountInCollCall {
+  static Future<ApiCallResponse> call({
+    String email = '',
+    String collection = '',
+  }) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'hasAccountInColl',
+      apiUrl:
+          'https://us-central1-srconstruccion-d4663.cloudfunctions.net/hasAccountInColl',
+      callType: ApiCallType.GET,
+      headers: {},
+      params: {
+        'email': email,
+        'collection': collection,
+      },
+      returnBody: true,
+    );
+  }
+
+  static dynamic hasAccount(dynamic response) => getJsonField(
+        response,
+        r'''$.hasAccount''',
+      );
+}

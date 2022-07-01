@@ -19,6 +19,9 @@ class _ActivarMarcaWidgetState extends State<ActivarMarcaWidget> {
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: 200,
+        constraints: BoxConstraints(
+          maxWidth: 500,
+        ),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(

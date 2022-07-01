@@ -56,6 +56,9 @@ class _ValidandoCuentaWidgetState extends State<ValidandoCuentaWidget> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: 420,
+                constraints: BoxConstraints(
+                  maxWidth: 500,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -81,8 +84,8 @@ class _ValidandoCuentaWidgetState extends State<ValidandoCuentaWidget> {
                               children: [
                                 Divider(
                                   thickness: 3,
-                                  indent: 150,
-                                  endIndent: 150,
+                                  indent: 200,
+                                  endIndent: 200,
                                   color: Color(0xFFDBE2E7),
                                 ),
                                 Padding(

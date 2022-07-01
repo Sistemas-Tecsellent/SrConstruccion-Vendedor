@@ -189,6 +189,9 @@ class _NuevoPedidoSELLER5DIASWidgetState
                             children: [
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.9,
+                                constraints: BoxConstraints(
+                                  maxWidth: 400,
+                                ),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   boxShadow: [
@@ -254,6 +257,9 @@ class _NuevoPedidoSELLER5DIASWidgetState
                             children: [
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.9,
+                                constraints: BoxConstraints(
+                                  maxWidth: 500,
+                                ),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   boxShadow: [
@@ -480,6 +486,9 @@ class _NuevoPedidoSELLER5DIASWidgetState
                         padding: EdgeInsetsDirectional.fromSTEB(18, 20, 18, 20),
                         child: Container(
                           width: double.infinity,
+                          constraints: BoxConstraints(
+                            maxWidth: 500,
+                          ),
                           decoration: BoxDecoration(
                             color: Color(0x00FFFFFF),
                             boxShadow: [
@@ -585,6 +594,9 @@ class _NuevoPedidoSELLER5DIASWidgetState
                         padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                         child: Container(
                           width: MediaQuery.of(context).size.width * 0.9,
+                          constraints: BoxConstraints(
+                            maxWidth: 500,
+                          ),
                           decoration: BoxDecoration(
                             color: Color(0x00FFFFFF),
                             border: Border.all(
@@ -629,6 +641,9 @@ class _NuevoPedidoSELLER5DIASWidgetState
                             Container(
                               width: double.infinity,
                               height: 130,
+                              constraints: BoxConstraints(
+                                maxWidth: 500,
+                              ),
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -676,6 +691,9 @@ class _NuevoPedidoSELLER5DIASWidgetState
                         padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                         child: Container(
                           width: MediaQuery.of(context).size.width * 0.9,
+                          constraints: BoxConstraints(
+                            maxWidth: 500,
+                          ),
                           decoration: BoxDecoration(
                             color: Color(0x00FFFFFF),
                             border: Border.all(
@@ -709,8 +727,12 @@ class _NuevoPedidoSELLER5DIASWidgetState
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        constraints: BoxConstraints(
+                          maxWidth: 500,
+                        ),
+                        decoration: BoxDecoration(),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -762,6 +784,9 @@ class _NuevoPedidoSELLER5DIASWidgetState
                                                   .width *
                                               0.3,
                                           height: 50,
+                                          constraints: BoxConstraints(
+                                            maxWidth: 200,
+                                          ),
                                           decoration: BoxDecoration(
                                             color: Colors.white,
                                             borderRadius:
@@ -842,6 +867,9 @@ class _NuevoPedidoSELLER5DIASWidgetState
                                             MediaQuery.of(context).size.width *
                                                 0.29,
                                         height: 50,
+                                        constraints: BoxConstraints(
+                                          maxWidth: 200,
+                                        ),
                                         decoration: BoxDecoration(
                                           color: Colors.white,
                                           borderRadius:
@@ -893,6 +921,9 @@ class _NuevoPedidoSELLER5DIASWidgetState
                         padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
                         child: Container(
                           width: MediaQuery.of(context).size.width * 0.9,
+                          constraints: BoxConstraints(
+                            maxWidth: 500,
+                          ),
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,

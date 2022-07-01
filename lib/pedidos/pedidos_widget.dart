@@ -584,6 +584,7 @@ class _PedidosWidgetState extends State<PedidosWidget> {
                             return SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: List.generate(
                                     columnOrdersForStoresRecordList.length,
                                     (columnIndex) {
@@ -664,6 +665,9 @@ class _PedidosWidgetState extends State<PedidosWidget> {
                                         }
                                       },
                                       child: Container(
+                                        constraints: BoxConstraints(
+                                          maxWidth: 500,
+                                        ),
                                         decoration: BoxDecoration(
                                           color: Color(0xFFFD9954),
                                           borderRadius:
@@ -917,6 +921,9 @@ class _PedidosWidgetState extends State<PedidosWidget> {
                                         }
                                       },
                                       child: Container(
+                                        constraints: BoxConstraints(
+                                          maxWidth: 500,
+                                        ),
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryColor,
@@ -1182,6 +1189,9 @@ class _PedidosWidgetState extends State<PedidosWidget> {
                                         }
                                       },
                                       child: Container(
+                                        constraints: BoxConstraints(
+                                          maxWidth: 500,
+                                        ),
                                         decoration: BoxDecoration(
                                           color: Color(0xFFFDC054),
                                           borderRadius:
@@ -1364,6 +1374,7 @@ class _PedidosWidgetState extends State<PedidosWidget> {
                             return SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.end,
                                 children: List.generate(
                                     columnOrdersForStoresRecordList.length,
                                     (columnIndex) {
@@ -1404,6 +1415,9 @@ class _PedidosWidgetState extends State<PedidosWidget> {
                                         }
                                       },
                                       child: Container(
+                                        constraints: BoxConstraints(
+                                          maxWidth: 500,
+                                        ),
                                         decoration: BoxDecoration(
                                           color: Color(0xFF7ADD70),
                                           borderRadius:

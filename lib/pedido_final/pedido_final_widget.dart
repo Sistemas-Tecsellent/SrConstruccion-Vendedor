@@ -168,6 +168,9 @@ class _PedidoFinalWidgetState extends State<PedidoFinalWidget> {
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Container(
+                                    constraints: BoxConstraints(
+                                      maxWidth: 400,
+                                    ),
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       boxShadow: [
@@ -474,6 +477,9 @@ class _PedidoFinalWidgetState extends State<PedidoFinalWidget> {
                                 Container(
                                   width:
                                       MediaQuery.of(context).size.width * 0.9,
+                                  constraints: BoxConstraints(
+                                    maxWidth: 400,
+                                  ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
                                     boxShadow: [
@@ -551,6 +557,9 @@ class _PedidoFinalWidgetState extends State<PedidoFinalWidget> {
                                 Container(
                                   width:
                                       MediaQuery.of(context).size.width * 0.9,
+                                  constraints: BoxConstraints(
+                                    maxWidth: 400,
+                                  ),
                                   decoration: BoxDecoration(
                                     color: Colors.white,
                                     boxShadow: [
@@ -625,6 +634,9 @@ class _PedidoFinalWidgetState extends State<PedidoFinalWidget> {
                                                       .width *
                                                   0.2,
                                               height: 30,
+                                              constraints: BoxConstraints(
+                                                maxWidth: 80,
+                                              ),
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEEEEEE),
                                                 borderRadius:

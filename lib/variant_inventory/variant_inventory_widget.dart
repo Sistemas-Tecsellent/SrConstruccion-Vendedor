@@ -626,6 +626,10 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                                   .size
                                                                   .width *
                                                               0.9,
+                                                          constraints:
+                                                              BoxConstraints(
+                                                            maxWidth: 500,
+                                                          ),
                                                           decoration:
                                                               BoxDecoration(
                                                             color: Colors.white,
@@ -868,6 +872,10 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                                   .size
                                                                   .width *
                                                               0.9,
+                                                          constraints:
+                                                              BoxConstraints(
+                                                            maxWidth: 500,
+                                                          ),
                                                           decoration:
                                                               BoxDecoration(
                                                             color: Colors.white,
@@ -1115,6 +1123,10 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                                   .size
                                                                   .width *
                                                               0.9,
+                                                          constraints:
+                                                              BoxConstraints(
+                                                            maxWidth: 500,
+                                                          ),
                                                           decoration:
                                                               BoxDecoration(
                                                             color: Colors.white,

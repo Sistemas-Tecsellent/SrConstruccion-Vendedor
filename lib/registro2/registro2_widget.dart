@@ -111,7 +111,7 @@ class _Registro2WidgetState extends State<Registro2Widget> {
                   padding: EdgeInsetsDirectional.fromSTEB(20, 40, 20, 20),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       InkWell(
                         onTap: () async {
@@ -147,25 +147,28 @@ class _Registro2WidgetState extends State<Registro2Widget> {
                           ),
                         ),
                       ),
-                      Container(
-                        width: 40,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          shape: BoxShape.circle,
-                        ),
-                        alignment: AlignmentDirectional(0, 0),
-                        child: Text(
-                          '2',
-                          style: FlutterFlowTheme.of(context)
-                              .bodyText1
-                              .override(
-                                fontFamily: 'Montserrat',
-                                color:
-                                    FlutterFlowTheme.of(context).primaryColor,
-                                fontSize: 20,
-                              ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            shape: BoxShape.circle,
+                          ),
+                          alignment: AlignmentDirectional(0, 0),
+                          child: Text(
+                            '2',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyText1
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                  fontSize: 20,
+                                ),
+                          ),
                         ),
                       ),
                       Padding(
@@ -182,37 +185,40 @@ class _Registro2WidgetState extends State<Registro2Widget> {
                               ),
                         ),
                       ),
-                      InkWell(
-                        onTap: () async {
-                          context.pushNamed(
-                            'registro3',
-                            extra: <String, dynamic>{
-                              kTransitionInfoKey: TransitionInfo(
-                                hasTransition: true,
-                                transitionType: PageTransitionType.fade,
-                                duration: Duration(milliseconds: 0),
-                              ),
-                            },
-                          );
-                        },
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          decoration: BoxDecoration(
-                            color: Color(0x94FAF1E2),
-                            shape: BoxShape.circle,
-                          ),
-                          alignment: AlignmentDirectional(0, 0),
-                          child: Text(
-                            '3',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyText1
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
-                                  fontSize: 20,
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                        child: InkWell(
+                          onTap: () async {
+                            context.pushNamed(
+                              'registro3',
+                              extra: <String, dynamic>{
+                                kTransitionInfoKey: TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType: PageTransitionType.fade,
+                                  duration: Duration(milliseconds: 0),
                                 ),
+                              },
+                            );
+                          },
+                          child: Container(
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              color: Color(0x94FAF1E2),
+                              shape: BoxShape.circle,
+                            ),
+                            alignment: AlignmentDirectional(0, 0),
+                            child: Text(
+                              '3',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
+                                    fontSize: 20,
+                                  ),
+                            ),
                           ),
                         ),
                       ),

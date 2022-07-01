@@ -553,157 +553,318 @@ class _RepartidoresWidgetState extends State<RepartidoresWidget> {
                   ],
                 ),
               ),
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(15, 10, 0, 0),
-                  child: AuthUserStreamWidget(
-                    child: StreamBuilder<List<DeliverersRecord>>(
-                      stream: queryDeliverersRecord(
-                        queryBuilder: (deliverersRecord) =>
-                            deliverersRecord.where('associatedWith',
-                                isEqualTo: valueOrDefault(
-                                    currentUserDocument?.storeId, '')),
-                      ),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50,
-                              height: 50,
-                              child: CircularProgressIndicator(
-                                color:
-                                    FlutterFlowTheme.of(context).primaryColor,
-                              ),
-                            ),
-                          );
-                        }
-                        List<DeliverersRecord> gridViewDeliverersRecordList =
-                            snapshot.data;
-                        return GridView.builder(
-                          padding: EdgeInsets.zero,
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 0,
-                            mainAxisSpacing: 15,
-                            childAspectRatio: 0.8,
-                          ),
-                          scrollDirection: Axis.vertical,
-                          itemCount: gridViewDeliverersRecordList.length,
-                          itemBuilder: (context, gridViewIndex) {
-                            final gridViewDeliverersRecord =
-                                gridViewDeliverersRecordList[gridViewIndex];
-                            return Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
-                              child: Container(
-                                width: 120,
-                                height: 180,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 5,
-                                      color: Color(0x22000000),
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.circular(10),
+              if (responsiveVisibility(
+                context: context,
+                phone: false,
+                tablet: false,
+              ))
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(15, 10, 0, 0),
+                    child: AuthUserStreamWidget(
+                      child: StreamBuilder<List<DeliverersRecord>>(
+                        stream: queryDeliverersRecord(
+                          queryBuilder: (deliverersRecord) =>
+                              deliverersRecord.where('associatedWith',
+                                  isEqualTo: valueOrDefault(
+                                      currentUserDocument?.storeId, '')),
+                        ),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50,
+                                height: 50,
+                                child: CircularProgressIndicator(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
                                 ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Container(
-                                      width: 60,
-                                      height: 60,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: Image.network(
-                                        valueOrDefault<String>(
-                                          gridViewDeliverersRecord.photoUrl,
-                                          'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
+                              ),
+                            );
+                          }
+                          List<DeliverersRecord> gridViewDeliverersRecordList =
+                              snapshot.data;
+                          return GridView.builder(
+                            padding: EdgeInsets.zero,
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 7,
+                              crossAxisSpacing: 0,
+                              mainAxisSpacing: 15,
+                              childAspectRatio: 0.8,
+                            ),
+                            scrollDirection: Axis.vertical,
+                            itemCount: gridViewDeliverersRecordList.length,
+                            itemBuilder: (context, gridViewIndex) {
+                              final gridViewDeliverersRecord =
+                                  gridViewDeliverersRecordList[gridViewIndex];
+                              return Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
+                                child: Container(
+                                  width: 120,
+                                  height: 180,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 5,
+                                        color: Color(0x22000000),
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Container(
+                                        width: 60,
+                                        height: 60,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
                                         ),
-                                        fit: BoxFit.fitWidth,
-                                      ),
-                                    ),
-                                    Text(
-                                      gridViewDeliverersRecord.displayName,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.normal,
+                                        child: Image.network(
+                                          valueOrDefault<String>(
+                                            gridViewDeliverersRecord.photoUrl,
+                                            'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
                                           ),
-                                    ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        FaIcon(
-                                          FontAwesomeIcons.truckPickup,
-                                          color: Color(0xFFAEAEAE),
-                                          size: 24,
+                                          fit: BoxFit.fitWidth,
                                         ),
-                                        Text(
-                                          gridViewDeliverersRecord.transport,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyText1
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.normal,
-                                                fontStyle: FontStyle.italic,
-                                              ),
-                                        ),
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 0, 10, 0),
-                                      child: Row(
+                                      ),
+                                      Text(
+                                        gridViewDeliverersRecord.displayName,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Montserrat',
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                      ),
+                                      Column(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
                                         children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0, 0, 5, 0),
-                                            child: Text(
-                                              gridViewDeliverersRecord.status,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily:
-                                                            'Montserrat',
-                                                        color: Colors.black,
-                                                        fontSize: 12,
-                                                      ),
-                                            ),
+                                          FaIcon(
+                                            FontAwesomeIcons.truckPickup,
+                                            color: Color(0xFFAEAEAE),
+                                            size: 24,
+                                          ),
+                                          Text(
+                                            gridViewDeliverersRecord.transport,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Montserrat',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.normal,
+                                                  fontStyle: FontStyle.italic,
+                                                ),
                                           ),
                                         ],
                                       ),
-                                    ),
-                                  ],
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            20, 0, 10, 0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0, 0, 5, 0),
+                                              child: Text(
+                                                gridViewDeliverersRecord.status,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          color: Colors.black,
+                                                          fontSize: 12,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            );
-                          },
-                        );
-                      },
+                              );
+                            },
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ),
-              ),
+              if (responsiveVisibility(
+                context: context,
+                tabletLandscape: false,
+                desktop: false,
+              ))
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(15, 10, 0, 0),
+                    child: AuthUserStreamWidget(
+                      child: StreamBuilder<List<DeliverersRecord>>(
+                        stream: queryDeliverersRecord(
+                          queryBuilder: (deliverersRecord) =>
+                              deliverersRecord.where('associatedWith',
+                                  isEqualTo: valueOrDefault(
+                                      currentUserDocument?.storeId, '')),
+                        ),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50,
+                                height: 50,
+                                child: CircularProgressIndicator(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                ),
+                              ),
+                            );
+                          }
+                          List<DeliverersRecord> gridViewDeliverersRecordList =
+                              snapshot.data;
+                          return GridView.builder(
+                            padding: EdgeInsets.zero,
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 0,
+                              mainAxisSpacing: 15,
+                              childAspectRatio: 0.8,
+                            ),
+                            scrollDirection: Axis.vertical,
+                            itemCount: gridViewDeliverersRecordList.length,
+                            itemBuilder: (context, gridViewIndex) {
+                              final gridViewDeliverersRecord =
+                                  gridViewDeliverersRecordList[gridViewIndex];
+                              return Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
+                                child: Container(
+                                  width: 120,
+                                  height: 180,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 5,
+                                        color: Color(0x22000000),
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Container(
+                                        width: 60,
+                                        height: 60,
+                                        clipBehavior: Clip.antiAlias,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: Image.network(
+                                          valueOrDefault<String>(
+                                            gridViewDeliverersRecord.photoUrl,
+                                            'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset%20predeterminado.png?alt=media&token=7c92986b-dd75-4755-8169-58cbbc6bce94',
+                                          ),
+                                          fit: BoxFit.fitWidth,
+                                        ),
+                                      ),
+                                      Text(
+                                        gridViewDeliverersRecord.displayName,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Montserrat',
+                                              color: Colors.black,
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                      ),
+                                      Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          FaIcon(
+                                            FontAwesomeIcons.truckPickup,
+                                            color: Color(0xFFAEAEAE),
+                                            size: 24,
+                                          ),
+                                          Text(
+                                            gridViewDeliverersRecord.transport,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Montserrat',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.normal,
+                                                  fontStyle: FontStyle.italic,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            20, 0, 10, 0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0, 0, 5, 0),
+                                              child: Text(
+                                                gridViewDeliverersRecord.status,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          color: Colors.black,
+                                                          fontSize: 12,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                ),
             ],
           ),
         ),

@@ -1,7 +1,6 @@
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,7 +20,7 @@ class _SobreSrConstruccionWidgetState extends State<SobreSrConstruccionWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -153,66 +152,6 @@ class _SobreSrConstruccionWidgetState extends State<SobreSrConstruccionWidget> {
                                         ),
                                       ),
                                     ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 20, 0),
-                                          child: FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
-                                            },
-                                            text: 'Registrarme',
-                                            options: FFButtonOptions(
-                                              width: 200,
-                                              height: 50,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryColor,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .subtitle2
-                                                      .override(
-                                                        fontFamily:
-                                                            'Montserrat',
-                                                        color: Colors.white,
-                                                      ),
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1,
-                                              ),
-                                              borderRadius: 120,
-                                            ),
-                                          ),
-                                        ),
-                                        FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
-                                          },
-                                          text: 'Comenzar a vender',
-                                          options: FFButtonOptions(
-                                            width: 200,
-                                            height: 50,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .subtitle2
-                                                    .override(
-                                                      fontFamily: 'Montserrat',
-                                                      color: Colors.white,
-                                                    ),
-                                            borderSide: BorderSide(
-                                              color: Colors.transparent,
-                                              width: 1,
-                                            ),
-                                            borderRadius: 120,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
                                   ],
                                 ),
                               ),
@@ -288,6 +227,7 @@ class _SobreSrConstruccionWidgetState extends State<SobreSrConstruccionWidget> {
                                 FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Montserrat',
                                       fontSize: 16,
+                                      fontWeight: FontWeight.normal,
                                     ),
                           ),
                         ),
@@ -360,6 +300,7 @@ class _SobreSrConstruccionWidgetState extends State<SobreSrConstruccionWidget> {
                                 FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Montserrat',
                                       fontSize: 16,
+                                      fontWeight: FontWeight.normal,
                                     ),
                           ),
                         ),
@@ -433,6 +374,7 @@ class _SobreSrConstruccionWidgetState extends State<SobreSrConstruccionWidget> {
                                 FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Montserrat',
                                       fontSize: 16,
+                                      fontWeight: FontWeight.normal,
                                     ),
                           ),
                         ),

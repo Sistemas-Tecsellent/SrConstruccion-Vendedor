@@ -105,7 +105,7 @@ class _Registro4WidgetState extends State<Registro4Widget> {
                   padding: EdgeInsetsDirectional.fromSTEB(20, 40, 20, 20),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       InkWell(
                         onTap: () async {
@@ -141,29 +141,32 @@ class _Registro4WidgetState extends State<Registro4Widget> {
                           ),
                         ),
                       ),
-                      InkWell(
-                        onTap: () async {
-                          context.pushNamed('registro2');
-                        },
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            shape: BoxShape.circle,
-                          ),
-                          alignment: AlignmentDirectional(0, 0),
-                          child: Text(
-                            '2',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyText1
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
-                                  fontSize: 20,
-                                ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                        child: InkWell(
+                          onTap: () async {
+                            context.pushNamed('registro2');
+                          },
+                          child: Container(
+                            width: 40,
+                            height: 40,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              shape: BoxShape.circle,
+                            ),
+                            alignment: AlignmentDirectional(0, 0),
+                            child: Text(
+                              '2',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
+                                    fontSize: 20,
+                                  ),
+                            ),
                           ),
                         ),
                       ),
@@ -200,25 +203,28 @@ class _Registro4WidgetState extends State<Registro4Widget> {
                           ),
                         ),
                       ),
-                      Container(
-                        width: 40,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          shape: BoxShape.circle,
-                        ),
-                        alignment: AlignmentDirectional(0, 0),
-                        child: Text(
-                          '4',
-                          style: FlutterFlowTheme.of(context)
-                              .bodyText1
-                              .override(
-                                fontFamily: 'Montserrat',
-                                color:
-                                    FlutterFlowTheme.of(context).primaryColor,
-                                fontSize: 20,
-                              ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            shape: BoxShape.circle,
+                          ),
+                          alignment: AlignmentDirectional(0, 0),
+                          child: Text(
+                            '4',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyText1
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                  fontSize: 20,
+                                ),
+                          ),
                         ),
                       ),
                       Padding(

@@ -63,6 +63,7 @@ class _MarcaSingleWidgetState extends State<MarcaSingleWidget> {
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SingleChildScrollView(
                   child: Column(

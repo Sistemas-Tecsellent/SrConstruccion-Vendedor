@@ -28,7 +28,7 @@ class _ComprarWidgetState extends State<ComprarWidget> {
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width,
